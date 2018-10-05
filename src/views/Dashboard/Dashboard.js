@@ -21,11 +21,11 @@ class Dashboard extends Component {
     return (
       <div className="animated fadeIn dashboard">
         <Row>
-          <Col xs="12" sm={{size: 6 , offset: 3}} lg={{size: 6 , offset: 3}} md={{size: 6 , offset: 3}} >
-            <Card className={"mt-4 dashboard-menu "+this.props.class}>
+          <Col xs="12">
+            <Card className={"mt-12 dashboard-menu "+this.props.class}>
               <CardBody className="pb-0 pt-5">
-                <div className='text-center font-3xlt'>Total Products</div>
-                <div className="text-value-lg font-5xl text-center">{this.state.totalProducts ? this.state.totalProducts : 0}</div>
+                <div className='text-center font-3xlt'/>
+                <div className="text-value-sm ">{JSON.stringify(this.props)}</div>
               </CardBody>
               <div className="chart-wrapper mx-3" style={{height: '20px'}}/>
             </Card>
