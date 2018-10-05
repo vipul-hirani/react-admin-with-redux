@@ -1,0 +1,145 @@
+@import 'assets/css/reactTable.css';
+@import "views/Dashboard/dashboard.scss";
+
+.react-confirm-alert-body {
+    background-color: #d5e2f5 !important;
+    text-align: center !important;
+}
+
+.react-confirm-alert-button-group {
+    display: flow-root !important;
+}
+
+.ReactTable .rt-td, .ReactTable .rt-thead .rt-th {
+    text-align: center !important;
+}
+
+.editor :global(.public-DraftEditor-content) {
+    max-height: 200px;
+    overflow: auto;
+}
+
+.rdw-editor-wrapper {
+    border: 1px solid #c8ced2;
+    border-radius: 8px;
+    margin-left: 0;
+}
+
+.rdw-editor-main {
+    min-height: 200px;
+    max-height: 200px;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+.uppercase {
+    text-transform: uppercase;
+}
+
+/*model*/
+.data-model {
+    min-width: 50%;
+}
+
+/*React table*/
+
+.ReactTable .rt-thead .rt-th {
+    padding: 5px;
+}
+
+.ReactTable .rt-thead .rt-th input {
+    border-color: #0c0e10;
+}
+
+/*extra*/
+.color-red {
+    color: red;
+}
+
+.uploadPictureContainer {
+    width: 23% !important;
+    margin: 1% !important;
+    padding: 7px !important;
+}
+
+.forgot-password-back {
+    vertical-align: middle;
+    line-height: 38px;
+}
+
+.dashboard-menu {
+    cursor: pointer;
+}
+
+.breadcrumb-new {
+    margin: 0 -29px 22px !important;
+}
+
+.mb-xl-3, .mb-lg-3, .my-lg-3 {
+    margin-bottom: 0 !important;
+}
+
+.row .action-button {
+    cursor: pointer;
+}
+
+.uploadedImagesPreview {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.deleteImage {
+    position: absolute;
+    top: -9px;
+    right: -9px;
+    color: #fff;
+    background: #ff4081;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    font-size: 26px;
+    font-weight: bold;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+}
+
+.sweet-loading {
+    z-index: 999;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    top: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.edit-button-custom {
+    cursor: pointer !important;
+    color: #666 !important;
+    text-decoration: none !important;
+}
+
+.rbt-input-main{
+    height: calc(2.64062rem + 2px)!important;
+    padding: 0.5rem 1rem!important;
+    font-size: 1.09375rem!important;
+    line-height: 1.5!important;
+    border-radius: 0.3rem!important;
+}
+/*.blur {
+  background-color: #000;
+  opacity: 0.1;
+}*/
