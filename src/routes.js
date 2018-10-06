@@ -24,12 +24,18 @@ const Dashboard = Loadable({
   loading: Loading,
 });
 
+const List = Loadable({
+  loader: () => import('./views/List'),
+  loading: Loading,
+});
+
 
 
 // https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config
 const routes = [
   { path: '/', exact: true, name: 'Home', component: Dashboard },
   { path: '/dashboard', name: 'Dashboard', component: Dashboard },
+  { path: '/list/:id', name: 'List', component: List },
 ];
 
 export default routes;
