@@ -9,12 +9,8 @@ import {CardBody, Card} from "reactstrap";
 class Dashboard extends Component {
   constructor(props) {
     super(props);
+    console.log('---------------------Props inside dashboard --------------------');
     console.log(this.props);
-    this.state = {
-      totalProducts: '',
-    };
-
-
   }
 
   render() {
@@ -22,7 +18,7 @@ class Dashboard extends Component {
       <div className="animated fadeIn dashboard">
         <Row>
           <Col xs="12">
-            <Card className={"mt-12 dashboard-menu "+this.props.class}>
+            <Card className={"mt-12 dashboard-menu "}>
               <CardBody className="pb-0 pt-5">
                 <div className='text-center font-3xlt'/>
                 <div className="text-value-sm ">{JSON.stringify(this.props)}</div>

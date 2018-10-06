@@ -7,6 +7,10 @@ import logo from '../../assets/img/brand/logo.svg'
 import Helpers from "../../service/Helpers";
 
 import icon from './../../assets/img/user-icon.png'
+import {createSelector} from "reselect";
+import {updateUser} from "../../service/actions/user-action";
+import {updateToken} from "../../service/actions/token-action";
+import connect from "react-redux/es/connect/connect";
 
 const propTypes = {
   children: PropTypes.node,
@@ -19,6 +23,8 @@ class DefaultHeader extends Component {
   logout() {
     Helpers.removeLocalStorageData('_token');
     Helpers.removeLocalStorageData('_USER');
+    this.props.onUserUpdate('');
+    this.props.onTokenUpdate('');
     this.props.history.push("/");
   };
 
@@ -61,4 +67,22 @@ class DefaultHeader extends Component {
 DefaultHeader.propTypes = propTypes;
 DefaultHeader.defaultProps = defaultProps;
 
-export default DefaultHeader;
+const userSelector = state => state.user;
+
+const tokenSelector = state => state.token;
+
+const mapStateToProps = createSelector(
+  userSelector,
+  tokenSelector,
+  (user, token) => ({
+    user,
+    token
+  })
+);
+
+const mapActionToProps = {
+  onUserUpdate: updateUser,
+  onTokenUpdate: updateToken,
+};
+
+export default connect(mapStateToProps, mapActionToProps)(DefaultHeader);
