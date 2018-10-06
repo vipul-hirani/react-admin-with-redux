@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
-import { Container } from 'reactstrap';
+import React, { Component } from "react";
+import { Route, Switch } from "react-router-dom";
+import { Container } from "reactstrap";
 
 import {
   AppFooter,
@@ -10,22 +10,22 @@ import {
   AppSidebarForm,
   AppSidebarHeader,
   AppSidebarMinimizer,
-  AppSidebarNav,
-} from '@coreui/react';
+  AppSidebarNav
+} from "@coreui/react";
 // sidebar nav config
-import navigation from '../../_nav';
+import navigation from "../../_nav";
 // routes config
-import routes from '../../routes';
-import DefaultFooter from './DefaultFooter';
-import DefaultHeader from './DefaultHeader';
+import routes from "../../routes";
+import DefaultFooter from "./DefaultFooter";
+import DefaultHeader from "./DefaultHeader";
 
 class DefaultLayout extends Component {
   render() {
-    let that =this
+    let that = this;
     return (
       <div className="app">
         <AppHeader fixed>
-          <DefaultHeader {...that.props}/>
+          <DefaultHeader {...that.props} />
         </AppHeader>
         <div className="app-body">
           <AppSidebar fixed display="lg">
@@ -39,18 +39,24 @@ class DefaultLayout extends Component {
             <Container fluid>
               <Switch>
                 {routes.map((route, idx) => {
-                    return route.component ? (<Route key={idx} path={route.path} exact={route.exact} name={route.name} render={props => (
-                        <route.component {...props} />
-                      )} />)
-                      : (null);
-                  },
-                )}
+                  return route.component ? (
+                    <Route
+                      key={idx}
+                      path={route.path}
+                      exact={route.exact}
+                      name={route.name}
+                      render={props => (
+                        <route.component {...props} {...this.props} />
+                      )}
+                    />
+                  ) : null;
+                })}
               </Switch>
             </Container>
           </main>
         </div>
         <AppFooter>
-          <DefaultFooter projectName="Marijuana"/>
+          <DefaultFooter projectName="Marijuana" />
         </AppFooter>
       </div>
     );
