@@ -51,7 +51,8 @@ class Login extends Component {
       if (this.state.email === 'admin@admin.com' && this.state.password === '123456') {
         Helpers.setLocalStorageData('_token', response.data.token);
         Helpers.setLocalStorageData('_USER', JSON.stringify(response.data));
-        this.props.onUserUpdate(response);
+        this.props.onUserUpdate(JSON.stringify(response.data));
+        this.props.onTokenUpdate(response.data.token);
         history.push('/dashboard');
       }
     } else {
