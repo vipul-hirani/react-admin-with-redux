@@ -1,17 +1,15 @@
 import React from "react";
-import {Redirect, Route} from "react-router-dom";
+import { Redirect, Route } from "react-router-dom";
 import Helpers from "../service/Helpers";
 
-export const PrivateRoute =({ component: Component, ...rest})=>(
+export const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
     {...rest}
-    render ={props =>
+    render={props =>
       Helpers.getLocalStorageData("_token") ? (
-        <Component {...props}/>
+        <Component {...props} {...rest.props} />
       ) : (
-        <Redirect
-          to="/login"
-        />
+        <Redirect to="/login" />
       )
     }
   />
