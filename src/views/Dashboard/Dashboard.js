@@ -22,7 +22,7 @@ class Dashboard extends Component {
             <Card className={"mt-12 dashboard-menu "}>
               <CardBody className="pb-0 pt-5">
                 <div className='text-center font-3xlt'/>
-                <Link to={'List/321564544644'}>Link page</Link>
+                <Link to={'/list/321564544644'}>Link page</Link>
                 <div className="text-value-sm ">{JSON.stringify(this.props)}</div>
               </CardBody>
               <div className="chart-wrapper mx-3" style={{height: '20px'}}/>
